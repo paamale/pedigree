@@ -1,0 +1,116 @@
+body{
+	margin:0;
+	font-family: century gothic;
+}
+
+#container{
+	width:1300px;
+	margin: 0 auto;
+}
+
+#header{
+	border: 7px solid #C48189;
+	background-color: darksalmon;
+	padding: 30px;
+	text-align: center;
+	vertical-align: middle;
+	float: :left;
+}
+
+#header h1{
+	padding-left: 0;
+	color:white;
+}
+
+#header p{
+	color:white;
+}
+
+#sidebar-sticky{
+	margin: 30px auto;
+	position: -webkit-sticky;
+	position: sticky;
+	float:left;
+	top:30px;
+	margin-bottom: 30px;
+	bottom:30px;
+}
+
+ul#navmenu{ 
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+ul#navmenu li{}
+
+ul#navmenu a{
+	display:block;
+	width:300px;
+	height:70px;
+	background-color: #C48189;
+	text-decoration: none;
+	color:white;
+	text-align:center;
+	vertical-align: middle;
+	line-height: 70px;
+}
+
+ul#navmenu a:hover{
+	background-color: #d16587;
+}
+
+ul#navmenu a:focus {
+	background-color: #666;
+	outline: none;
+}
+
+
+#page{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	width : 935px;
+	height: auto;
+	border : 1px dashed black;
+	float:right;
+	margin-left:30px;
+	margin-top: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 30px;
+}
+
+.btn{
+  background-color: #efd4cc;
+  border: none;
+  color: maroon;
+  padding: 10px 12px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btn:hover {
+  background-color:#666;
+}
+
+input[type="text"], input[type="password"]{
+	height:39px;
+	width:250px;
+	font-size:15px;
+	margin-bottom:20px;
+	background-color: #fff;
+	padding-left: 20px;
+}
+
+#clear{
+	clear:both;
+}
+
+#footer{
+	border: 7px solid #C48189;
+	background-color: darksalmon;
+	padding: 30px;
+	text-align: center;
+	color:white;
+	padding-top: 50px;
+}
