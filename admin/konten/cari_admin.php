@@ -9,7 +9,7 @@
 		$hasil=mysqli_query($conn,$select);
 		
 		if($username==null)
-			echo "Username tida ditemukan";
+			echo "Username tidak ditemukan";
 		else
 		include"tb_cari.php";}
 	?>

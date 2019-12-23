@@ -1,5 +1,6 @@
 body{
 	margin:0;
+	padding:0;
 	font-family: century gothic;
 }
 
@@ -31,6 +32,7 @@ body{
 	position: sticky;
 	float:left;
 	top:30px;
+	box-sizing: border-box;
 }
 
 ul#navmenu{ 
@@ -72,7 +74,9 @@ ul#navmenu a:focus {
 	margin-top: 30px;
 	padding-left: 15px;
 	padding-right: 15px;
-	margin-bottom: 30px; 
+	margin-bottom: 30px;
+	box-sizing: border-box;
+
 }
 
 .btn{
@@ -103,7 +107,7 @@ input[type="text"], input[type="password"]{
 
 #footer{
 	border: 7px solid #C48189;
-	background-color: green;
+	background-color: #40c990;
 	padding: 30px;
 	text-align: center;
 	color:white;

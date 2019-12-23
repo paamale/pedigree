@@ -45,6 +45,7 @@
 		</div>
 
 		<div id="footer">
+			
 			Ahmad Malik Fajar & Nida Putri Dzakiyyah<br/>
 			Teknik Informatika 2018<br/>
 			UIN Syarif Hidayatullah Jakarta<br/>
