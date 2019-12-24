@@ -46,7 +46,7 @@
 -->
 </style>
 
-<form action="?module=add_family#pos" method="post" class="style3">
+<form action="?module=cobaduluyas#pos" method="post" class="style3">
 	<button class="back">BACK</button>
 </form>
 <div align="center" class="style1">
@@ -55,65 +55,96 @@
 
 <?php 
     include "../koneksi/koneksi.php";
+    session_start();
+    $role = $_GET['role'];
+	$id = $_SESSION['id'];
+	$query = "SELECT * FROM family WHERE (id ='$id') and (keluarga ='$role')";
+	$result = mysqli_query($conn,$query);
+	$buff = mysqli_fetch_array($result);
 
-    $query = "SELECT * FROM family WHERE (no_family='$_SESSION[no_family]' and stat='$_POST[stat]')";
-    $buff=(mysqli_fetch_assoc(mysqli_query($conn,$query)));
-?>
+	if(mysqli_num_rows($result)==1){?>
+		<form action="?module=editfamilyproc#pos" method="post" enctype="multipart/form-data" class="style2">
+			<p>&nbsp;</p>
+				<b>
 
-<form action="?module=viewfamilyproc#pos" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="stat" value="<?php echo $_POST['stat'] ?>">
-    <input type="hidden" name="no_family" value="<?php echo $_SESSION['no_family']?>">
-	<!-- <p>&nbsp;</p> -->
-		<b>
+			<table width="496" border="0" align="center">
+				<input type="hidden" name="id" value="<?php echo $id ?>">
+				<input type="hidden" name="keluarga" value="<?php echo $role ?>">
+				<tr>
+					<h2>Upload Foto</h2>
+					<td>Foto :</td>
+					<td><input type="file" name="file" /></td>
+				</tr>
+				<tr>
+					<td width="163">Nama     :</td>
+					<td width="317"><input type="text" name="nama" value="<?php echo $buff['nama']?>" /></td>
+				</tr>
+				<tr>
+					<td>TTL :</td>
+					<td><input type="text" name="ttl" value="<?php echo $buff['ttl']?>"/></td>
+				</tr>
+				<tr>
+					<td>Alamat :</td>
+					<td><input type="text" name="alamat" value="<?php echo $buff['alamat']?>"/></td>
+				</tr>
+				<tr>
+					<td>Nomor Telepon :</td>
+					<td><input type="text" name="no_telp" value="<?php echo $buff['no_telp']?>"/></td>
+				</tr>
+				<tr>
+					<td height="90" align="right">
+						<input type="reset" value="RESET" />
+					</td>
+				</tr>
+			</table>
+			<input type="submit" name="submit" value="EDIT" class="tombol">
+				</b>
+		</form>
 
-	<table width="496" border="0" align="center">
-		<!-- <tr> 
-			<td> <img src="../Malik.JPG" width="100px" height="100px" float="center" /> </td>	
-		</tr> -->
-		<tr>
-			<td>Photo</td>
-            <td><input type="file" name="file" value="><?php echo $buff['photo'] ?>"style="margin-left: 90px;"></td>        
-        </tr>
-		
-		<input type="hidden" name='id_family' value="<?php echo $buff['id_family'];?>"/>
-		
-		<tr>
-			<td >Nama : </td>
-			<td><input type="text" name="nama" value="<?php echo $buff['nama'];?>" /></td>
-		</tr>
-		<tr>
-			<td>TTL: </td>
-			<td><input type="text" name="ttl" value="<?php echo $buff['ttl'];?>" /></td>
-		</tr>
-		<tr>
-			<td>Alamat :</td>
-			<td><input type="text" name="alamat" value="<?php echo $buff['alamat'];?>" /></td>
-		</tr>
+<?php } 
+
+	else{ ?>
+<form action="?module=addfamilyproc#pos" method="post" enctype="multipart/form-data" class="style2">
+			<p>&nbsp;</p>
+				<b>
+
+			<table width="496" border="0" align="center">
+				<input type="hidden" name="id_user" value="<?php echo $id_user ?>">
+				<input type="hidden" name="family_role" value="<?php echo $role ?>">
+				<tr>
+					<h2>Upload Foto</h2>
+					<td>Foto :</td>
+					<td><input type="file" name="file" /></td>
+				</tr>
+				<tr>
+					<td width="163">Nama     :</td>
+					<td width="317"><input type="text" name="nama" /></td>
+				</tr>
+				<tr>
+					<td>TTL :</td>
+					<td><input type="text" name="ttl" /></td>
+				</tr>
+				<tr>
+					<td>Alamat :</td>
+					<td><input type="text" name="alamat" /></td>
+				</tr>
+				<tr>
+					<td>Nomor Telepon :</td>
+					<td><input type="text" name="no_telp" /></td>
+				</tr>
+				<tr>
+					<td height="90" align="right">
+						<input type="reset" value="RESET" />
+					</td>
+				</tr>
+			</table>
+			<input type="submit" name="submit" value="ADD" class="tombol">
+				</b>
+		</form>
+
+<?php } ?>	
 
 
-			<td height="90" align="right">
-				<input type="reset" value="RESET" style="padding: 10px; background-color: #8ACD79;font-size: 14px; font-family: 'Lato'; margin-top: 15px;margin-left: 100px;"/>
-			</td>
-		
-			<td height="90" align="center">
-				<input type="submit" value="SUBMIT" style="padding: 10px; background-color: #8ACD79;font-size: 14px; font-family: 'Lato'; margin-top: 15px;margin-left: 100px;" />
-			</td>
 
-
-		<h2>Upload Foto</h2>
-   		 <form action="proses_upload.php" method="post" enctype="multipart/form-data">
-      	<table>
-        <tr>
-          <td>Pilih Foto : </td>
-          <td> <input type="file" name="foto" value=""> </td>
-        </tr>
-    	</table>
-    	</form>
-
-		
-	</table>
-<!-- 	<button  height="90" align="left" class="button">ADD</button> -->
-		</b>
-</form>
 
 		

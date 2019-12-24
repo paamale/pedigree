@@ -10,8 +10,10 @@
         if($buff['approval'] == 1){
             $_SESSION['username'] = $buff['username'];
             $_SESSION['password'] = $buff['password'];
+            $_SESSION['id'] = $buff['id'];
                 header('location: user/indexuser.php');
-        }
+            }
+        
 
         elseif ($buff['approval'] == 2) {
             $_SESSION['username'] = $buff['username'];

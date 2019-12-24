@@ -89,7 +89,7 @@
 .style li a {
 	border: 1px solid #ccc;
 	padding: 5px 5px;
-	min-height: 35px;
+	min-height: 95px;
 	width: 160px;
 	text-decoration: none;
 	color: #666;
@@ -114,59 +114,88 @@
 }*/
 
 </style>
+
 <div class="style">
 		<ul>
 			<li>
-					<ul>
-				<li>
-					<ul>
-						<li>
-							<ul>
-								<li><a href="#">buyut laki-laki</a></li>
-							</ul>
-							<a href="#">Kekek</a>
-							<ul>
-								<li><a href="#">Buyut perempuan</a></li>
-							</ul>
-						</li>
-					</ul>
-					<a href="#">ayah</a>
-					<ul>
-						<li>
-							<ul>
-								<li><a href="#">buyut laki-laki</a></li>
-							</ul>
-							<a href="#">Nenek</a>
-							<ul>
-								<li><a href="#">Buyut Perempuan</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				</ul>
-				<a href="#"><br>anak</a>
 				<ul>
 				<li>
 					<ul>
 						<li>
 							<ul>
-								<li><a href="#">buyut laki-laki</a></li>
+								<li>
+									<a href="?module=viewfamily&role=<?php echo "blkb" ?>">
+										<?php 
+											session_start();
+											$role ="blkb";
+
+											include "familyproc.php";
+										 ?>
+									</a>
+								</li>
 							</ul>
-							<a href="#">Kekek</a>
+							<a href="?module=viewfamily&role=<?php echo "kb" ?>"><?php
+							$role ="kb";
+
+							include "familyproc.php";
+							?>						
+							</a>
 							<ul>
-								<li><a href="#">Buyut perempuan</a></li>
+								<li><a href="?module=viewfamily&role=<?php echo "bpkb" ?>"><?php 
+									$role ="bpkb";	include "familyproc.php";?>	</a></li>
 							</ul>
 						</li>
 					</ul>
-					<a href="#">ibu</a>
+					<a href="?module=viewfamily&role=<?php echo "b" ?>"><?php 
+									$role ="b";	include "familyproc.php";?>	</a>
 					<ul>
 						<li>
 							<ul>
-								<li><a href="#">buyut laki-laki</a></li>
+								<li><a href="?module=viewfamily&role=<?php echo "blnb" ?>"><?php 
+									$role ="blnb";	include "familyproc.php";?>	</a></li>
 							</ul>
-							<a href="#">Nenek</a>
+							<a href="?module=viewfamily&role=<?php echo "nb" ?>"><?php 
+									$role ="nb";	include "familyproc.php";?>	</a>
 							<ul>
-								<li><a href="#">Buyut Perempuan</a></li>
+								<li><a href="?module=viewfamily&role=<?php echo "bpnb" ?>"><?php 
+									$role ="bpnb";	include "familyproc.php";?>	</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				</ul>
+				<a href="?module=viewfamily&role=<?php echo "a" ?>"><?php 
+									$role ="a";	include "familyproc.php";?>	
+				</a>
+				<ul>
+				<li>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "blki" ?>"><?php 
+									$role ="blki";	include "familyproc.php";?>	</a></li>
+							</ul>
+							<a href="?module=viewfamily&role=<?php echo "ki" ?>"><?php 
+									$role ="ki";	include "familyproc.php";?>	</a>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "bpki" ?>"><?php 
+									$role ="bpki";	include "familyproc.php";?>	</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a href="?module=viewfamily&role=<?php echo "i" ?>"><?php 
+									$role ="i";	include "familyproc.php";?>	</a>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "blni" ?>"><?php 
+									$role ="blni";	include "familyproc.php";?>	</a></li>
+							</ul>
+							<a href="?module=viewfamily&role=<?php echo "ni" ?>"><?php 
+									$role ="ni";	include "familyproc.php";?>	</a>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "bpni" ?>"><?php 
+									$role ="bpni";	include "familyproc.php";?>	</a></li>
 							</ul>
 						</li>
 					</ul>
