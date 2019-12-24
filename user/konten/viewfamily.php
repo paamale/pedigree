@@ -46,7 +46,7 @@
 -->
 </style>
 
-<form action="?module=cobaduluyas#pos" method="post" class="style3">
+<form action="?module=cobaduluya#pos" method="post" class="style3">
 	<button class="back">BACK</button>
 </form>
 <div align="center" class="style1">
