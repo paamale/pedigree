@@ -202,4 +202,8 @@
 				</ul>
 			</li>
 		</ul>
+	
+	<form action="?module=print#pos" method="post" target="_BLANK">
+		<input type="submit" value="Print">
+	</form>
 </div>
