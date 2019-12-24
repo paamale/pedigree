@@ -1,10 +1,11 @@
 <style type="text/css">
 
 .style{
-		margin-right: 100px;
+	margin-left: -240px;
+		
 }
 .style ul{
-	padding-top: 20px; 
+	padding: 0 0 0 240px; 
 	position: relative;
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -12,46 +13,91 @@
 	
 }
 
-.style ul::after{
-	border: 1px solid #ccc;
-}
-
-/*.style li::before, .style li::after{
-	content: '';
-	position: absolute; 
-	top: 0; 
-	border-top: 1px solid #ccc;
-	right: 10%;
-	width: 50%; 
-	height: 20px;
-}
-*/
 .style li{
 	list-style-type: none;
+	text-align: left;
 	position: relative;
-	padding: 10px 5px 0 10px;
 	
 	
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
-	background: rgba(30,30,30, .55);
-
-
 
 }
 
-.style li a{
+
+.style li::after{
+	content: '';
+	position: absolute; 
+	top: 50%; 
+	right:auto;
+	left: 171px;
+	border-top: 1px solid #ccc;
+	width: 30px; 
+	height: 28%;
+}
+
+
+
+/*.style ul::after, .style::before{
+	display: none;
+}*/
+
+.style li::before{
+	content: '';
+	position: absolute;
+	left: 200px;
+	right: auto;
+	height: 58%;
+	width: 38px;
+	border-top: 1px solid #ccc;
+	bottom:21% ;
+	top: 21%
+}
+
+/*Adding back the vertical connector to the last nodes*/
+.style li:last-child::before{
+	position: absolute;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.style li:first-child::after{
+	position: absolute;
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+.style li a:hover {
+	background: #c8e4f8; 
+	color: #000; 
+	border: 3px solid #94a0b4;
+}
+/*.style li a:hover li::after, 
+.style li a:hover li::before, 
+.style li a:hover li::before, 
+.style li a:hover li::before{
+	border-color:  #94a0b4;
+}*/
+
+
+
+
+.style li a {
 	border: 1px solid #ccc;
-	padding: 5px 10px;
+	padding: 5px 5px;
+	min-height: 35px;
+	width: 160px;
 	text-decoration: none;
 	color: #666;
 	font-family: arial, verdana, tahoma;
-	font-size: 11px;
+	font-size: 18px;
 	display: inline-block;
+	text-align: center;
 
-	
-	
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -60,59 +106,72 @@
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 }
-.style a{
-	padding-left: 100px;
-}
-</style>
 
-<div class=style>
-	<ul>
-		<ul>	
-			<li>	
-				<ul>
-						<ul>
-								<ul>	
-									<li><a href="#">Ayahnya kakek dari ibu</a></li>
-								</ul>
-							<li><a href="#">Kakek</a></li>	
-								<ul>	
-									<li><a href="#">ibunya kakek dari ibu</a></li>
-								</ul>
-						</ul>
-					<li><a href="#">ibu</a></li>
-						<ul>
-								<ul>	
-									<li><a href="#">ayahnya nenek dari ibu</a></li>
-								</ul>	
-							<li><a href="#">Nenek</a></li>
-								<ul>	
-									<li><a href="#">Ibunya nenek dari ibuss</a></li>
-								</ul>
-						</ul>
+/*before after conector li*/
+
+/*.style ul::after{
+	border: 1px solid #ccc;
+}*/
+
+</style>
+<div class="style">
+		<ul>
+			<li>
+					<ul>
+				<li>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="#">buyut laki-laki</a></li>
+							</ul>
+							<a href="#">Kekek</a>
+							<ul>
+								<li><a href="#">Buyut perempuan</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a href="#">ayah</a>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="#">buyut laki-laki</a></li>
+							</ul>
+							<a href="#">Nenek</a>
+							<ul>
+								<li><a href="#">Buyut Perempuan</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 				</ul>
-			<li><a href="#">anak</a>
+				<a href="#"><img src="../malik.jpg" width="80px" height="80px"><br>anak</a>
 				<ul>
-						<ul>
-								<ul>	
-									<li><a href="#">Ayahnya kakek dari ibu</a></li>
-								</ul>
-							<li><a href="#">Kakek</a></li>	
-								<ul>	
-									<li><a href="#">ibunya kakek dari ibu</a></li>
-								</ul>
-						</ul>
-					<li><a href="#">ibu</a></li>
-						<ul>
-								<ul>	
-									<li><a href="#">ayahnya nenek dari ibu</a></li>
-								</ul>	
-							<li><a href="#">Nenek</a></li>
-								<ul>	
-									<li><a href="#">Ibunya nenek dari ibuss</a></li>
-								</ul>
-						</ul>
+				<li>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="#">buyut laki-laki</a></li>
+							</ul>
+							<a href="#">Kekek</a>
+							<ul>
+								<li><a href="#">Buyut perempuan</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a href="#">ibu</a>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="#">buyut laki-laki</a></li>
+							</ul>
+							<a href="#">Nenek</a>
+							<ul>
+								<li><a href="#">Buyut Perempuan</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 				</ul>
 			</li>
-		</ul>	
-	</ul>
+		</ul>
 </div>
