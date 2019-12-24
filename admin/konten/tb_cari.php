@@ -1,16 +1,10 @@
- <html>
-		<?php
-			
-		?>
-		
-		
 		<?php
 		$i=0;
 		while($buff=mysqli_fetch_array($hasil)){
 			
 		$i++;
 		if($i==1){
-			echo '<table border="1" width="100%">
+			echo '<table border="1" width="100%" style="table-layout:fixed>
 			<tr>
 				<td  width="30px"  align="center">No</td>
 				<td  width="120px"   align="center">nama</td>
@@ -42,4 +36,3 @@
 			echo "Username Not Found!";
 		mysqli_close($conn);
 		?><br/>
-</html>

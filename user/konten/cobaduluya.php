@@ -144,7 +144,7 @@
 					</ul>
 				</li>
 				</ul>
-				<a href="#"><img src="../malik.jpg" width="80px" height="80px"><br>anak</a>
+				<a href="#"><br>anak</a>
 				<ul>
 				<li>
 					<ul>

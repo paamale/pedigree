@@ -4,21 +4,23 @@
 			
 		$i++;
 		if($i==1){
-			echo '<table width="600px" border="1" style="table-layout:fixed">
-			<col width="35px" />
-			<col width="140px" />
-			<col width="140px" />
+			echo '<table width="760px" border="1" style="table-layout:fixed">
+			<col width="30px" />
+			<col width="120px" />
 			<col width="100px" />
-			<col width="35px" />
-			<col width="160px" />
-			<col width="122px" />
+			<col width="100px" />
+			<col width="90px" />
+			<col width="150px" />
+			<col width="120px" />
+			<col width="112px" />
 			<tr>
 				<td style="overflow:hidden; text-overflow:ellipsis;">id</td>
-				<td style="overflow:hidden; text-overflow:ellipsis;">nama depan</td>
-				<td style="overflow:hidden; text-overflow:ellipsis;">nama belakang</td>
+				<td style="overflow:hidden; text-overflow:ellipsis;">nama</td>
 				<td style="overflow:hidden; text-overflow:ellipsis;">username</td>
-				<td style="overflow:hidden; text-overflow:ellipsis;">jk</td>
+				<td style="overflow:hidden; text-overflow:ellipsis;">password</td>
+				<td style="overflow:hidden; text-overflow:ellipsis;">jenis kelamin</td>
 				<td style="overflow:hidden; text-overflow:ellipsis;">email</td>
+				<td style="overflow:hidden; text-overflow:ellipsis;">nomor telepon</td>
 				<td style="overflow:hidden; text-overflow:ellipsis;">aksi</td>
 			</tr>
 		</table>';
@@ -26,22 +28,24 @@
 			
 		?>
 
-		<table width="600px" border="1" style="table-layout:fixed" >
-			<col width="35px" />
-			<col width="140px" />
-			<col width="140px" />
+		<table width="760px" border="1" style="table-layout:fixed" >
+			<col width="30px" />
+			<col width="120px" />
 			<col width="100px" />
-			<col width="35px" />
-			<col width="160px" />
-			<col width="60px" />
+			<col width="100px" />
+			<col width="90px" />
+			<col width="150px" />
+			<col width="120px" />
+			<col width="50px" />
 			<col width="60px" />
 			<tr>
 				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $i;?></td>
-				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['namadep'];?></td>
-				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['namabel'];?></td>
+				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['nama'];?></td>
 				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['username'];?></td>
-				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['jk'];?></td>
+				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['password'];?></td>
+				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['jenis_kelamin'];?></td>
 				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['email'];?></td>
+				<td style="overflow:hidden; text-overflow:ellipsis;"><?php echo $buff['no_telp'];?></td>
 				<td style="overflow:hidden; text-overflow:ellipsis;"><a href="?module=edit&id=<?php echo $buff['id'];?>">edit</td>
 				<td style="overflow:hidden; text-overflow:ellipsis;"><a href="?module=hapus&id=<?php echo $buff['id'];?>">hapus</td>
 			</tr>

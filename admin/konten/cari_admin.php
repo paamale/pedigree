@@ -11,5 +11,5 @@
 		if($username==null)
 			echo "Username tidak ditemukan";
 		else
-		include"tb_cari.php";}
+		include"tb_cari2.php";}
 	?>
