@@ -20,8 +20,7 @@
 			<ul id="navmenu">
 				<li><a href="?module=home_user#pos"><i class="fas fa-home"></i> Home</a></li>
 				<li><a href="?module=profil_user#pos"> <i class="fas fa-user"></i> Profil</a></li>
-				<li><a href="?module=add_family#pos"><i class="fas fa-plus-circle"></i> ADD </a></li>
-				<li><a href="?module=cobaduluya#pos"><i class="fas fa-users"></i> Family Tree</a></li>
+				<li><a href="?module=familytree#pos"><i class="fas fa-users"></i> Family Tree</a></li>
 				<li><a href="?module=logout_user#pos"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
 				
 			</ul>
@@ -31,7 +30,9 @@
 
 		<div id="page">
 
-			<?php if(isset($_GET['module']))
+			<?php 
+			session_start();
+			if(isset($_GET['module']))
 				include "konten/$_GET[module].php";
 			else
 				include "konten/home_user.php";

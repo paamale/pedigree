@@ -1,99 +1,102 @@
 <style type="text/css">
-.tree{
-	margin-left: 40px;
-}
 
-.tree ul {
-	padding-top: 20px; 
+.style{
+	margin-left: -240px;
+		
+}
+.style ul{
+	padding: 0 0 0 240px; 
 	position: relative;
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
-	background: rgba(30,30,30, .55);
-
-
+	
 }
 
-.tree li {
-	float: left; 
-	text-align: center;
+.style li{
 	list-style-type: none;
+	text-align: left;
 	position: relative;
-	padding: 20px 5px 0 5px;
-
+	
 	
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
+
 }
 
-/*We will use ::before and ::after to draw the connectors*/
 
-.tree li::before, .tree li::after{
+.style li::after{
 	content: '';
 	position: absolute; 
-	top: 0; 
-	right: 50%;
-	border-top: 3px solid #566B3F;
-	width: 50%; 
-	height: 20px;
-}
-.tree li::after{
-	right: auto; 
-	left: 50%;
-	border-left: 3px solid #566B3F;
+	top: 50%; 
+	right:auto;
+	left: 171px;
+	border-top: 1px solid #ccc;
+	width: 30px; 
+	height: 28%;
 }
 
-/*We need to remove left-right connectors from elements without 
-any siblings*/
-.tree li:only-child::after, .tree li:only-child::before {
+
+
+/*.style ul::after, .style::before{
 	display: none;
-}
+}*/
 
-/*Remove space from the top of single children*/
-.tree li:only-child{ padding-top: 0;}
-
-/*Remove left connector from first child and 
-right connector from last child*/
-.tree li:first-child::before, .tree li:last-child::after{
-	border: 0 none;
+.style li::before{
+	content: '';
+	position: absolute;
+	left: 200px;
+	right: auto;
+	height: 58%;
+	width: 38px;
+	border-top: 1px solid #ccc;
+	bottom:21% ;
+	top: 21%
 }
 
 /*Adding back the vertical connector to the last nodes*/
-.tree li:last-child::before{
-	border-right: 3px solid #566B3F;
+.style li:last-child::before{
+	position: absolute;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 	border-radius: 0 5px 0 0;
 	-webkit-border-radius: 0 5px 0 0;
 	-moz-border-radius: 0 5px 0 0;
 }
-.tree li:first-child::after{
+.style li:first-child::after{
+	position: absolute;
 	border-radius: 5px 0 0 0;
 	-webkit-border-radius: 5px 0 0 0;
 	-moz-border-radius: 5px 0 0 0;
 }
 
-/*Time to add downward connectors from parents*/
-.tree ul ul::before{
-	content: '';
-	position: absolute; 
-	top: 0; 
-	left: 50%;
-	border-left: 3px solid #566B3F; /*garis horizontal*/
-	width: 0; height: 20px;
+.style li a:hover {
+	background: #c8e4f8; 
+	color: #000; 
+	border: 3px solid #94a0b4;
 }
+/*.style li a:hover li::after, 
+.style li a:hover li::before, 
+.style li a:hover li::before, 
+.style li a:hover li::before{
+	border-color:  #94a0b4;
+}*/
 
-.tree li a{
-	border: 3px solid #566B3F;
-	padding: 5px 10px;
+
+
+
+.style li a {
+	border: 1px solid #ccc;
+	padding: 5px 5px;
+	min-height: 95px;
+	width: 160px;
 	text-decoration: none;
 	color: #666;
 	font-family: arial, verdana, tahoma;
 	font-size: 18px;
 	display: inline-block;
-	min-height: 150px;
-	min-width: 130px;
-
-	background : #6F7E5E; /*ini background yg kotak*/
+	text-align: center;
 
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -104,104 +107,99 @@ right connector from last child*/
 	-moz-transition: all 0.5s;
 }
 
-/*Time for some hover effects*/
-/*We will apply the hover effect the the lineage of the element also*/
-.tree li a:hover, .tree li a:hover+ul li a {
-	background: #c8e4f8; 
-	color: #000; 
-	border: 3px solid #94a0b4;
-}
-/*Connector styles on hover*/
-.tree li a:hover+ul li::after, 
-.tree li a:hover+ul li::before, 
-.tree li a:hover+ul::before, 
-.tree li a:hover+ul ul::before{
-	border-color:  #94a0b4;
-}
-.print{
-	float: right;
-	margin-right: 10px;
-	height: 60px;
-	width: 66px;
-	border: none;
-	background: url(img/print.svg);
-	background-repeat: no-repeat;
-}
+/*before after conector li*/
+
+/*.style ul::after{
+	border: 1px solid #ccc;
+}*/
+
 </style>
 
-<body>
-<form action="?module=print#pos" method="post" target="_BLANK">
-	<button class="print"> </button>
-</form>
-	<?php 	
-			session_start();
-			include"content/koneksi.php";
-			$id_user=$_SESSION['id_user'];
-			$select = "SELECT * FROM family f inner join user_id ud on ud.id_user=f.id_user inner join family f on f.id_family=f.id_family WHERE id_user ='$id_user'";
-			$buff=mysqli_fetch_array(mysqli_query($conn, $select));
-	?>
-	<div class="tree">
+<div class="style">
 		<ul>
 			<li>
-				<a href="?module=viewfamily#pos"><img src="img/container.jpg" width="150px" height="150px"><br>
-					<?php echo "Nabila cantik banget";?></a>
 				<ul>
-					<li>
-						<a href="?module=viewfamily#pos"><?php echo $buff['ayah'];?></a>
-						<ul>
-							<li>
-								<a href="?module=viewfamily#pos"><?php echo $buff['kakek_a'];?></a>
-								<ul>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ayah_ka'];?></a>
-									</li>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ibu_ka'];?></a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="?module=viewfamily#pos"><?php echo $buff['nenek_a'];?></a>
-								<ul>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ayah_na'];?></a>
-									</li>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ibu_na'];?></a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="?module=viewfamily#pos"><?php echo $buff['ibu'];?></a>
-						<ul>
-							<li>
-								<a href="?module=viewfamily#pos"><?php echo $buff['kakek_i'];?></a>
-								<ul>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ayah_ki'];?></a>
-									</li>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ibu_ki'];?></a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="?module=viewfamily#pos"><?php echo $buff['nenek_i'];?></a>
-								<ul>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ayah_ni'];?></a>
-									</li>
-									<li>
-										<a href="?module=viewfamily#pos"><?php echo $buff['ibu_ni'];?></a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
+				<li>
+					<ul>
+						<li>
+							<ul>
+								<li>
+									<a href="?module=viewfamily&role=<?php echo "blkb" ?>">
+										<?php 
+											$role ="blkb";
+
+											include "familyproc.php";
+										 ?>
+									</a>
+								</li>
+							</ul>
+							<a href="?module=viewfamily&role=<?php echo "kb" ?>"><?php
+							$role ="kb";
+
+							include "familyproc.php";
+							?>						
+							</a>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "bpkb" ?>"><?php 
+									$role ="bpkb";	include "familyproc.php";?>	</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a href="?module=viewfamily&role=<?php echo "b" ?>"><?php 
+									$role ="b";	include "familyproc.php";?>	</a>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "blnb" ?>"><?php 
+									$role ="blnb";	include "familyproc.php";?>	</a></li>
+							</ul>
+							<a href="?module=viewfamily&role=<?php echo "nb" ?>"><?php 
+									$role ="nb";	include "familyproc.php";?>	</a>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "bpnb" ?>"><?php 
+									$role ="bpnb";	include "familyproc.php";?>	</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				</ul>
+				<a href="?module=viewfamily&role=<?php echo "a" ?>"><?php 
+									$role ="a";	include "familyproc.php";?>	
+				</a>
+				<ul>
+				<li>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "blki" ?>"><?php 
+									$role ="blki";	include "familyproc.php";?>	</a></li>
+							</ul>
+							<a href="?module=viewfamily&role=<?php echo "ki" ?>"><?php 
+									$role ="ki";	include "familyproc.php";?>	</a>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "bpki" ?>"><?php 
+									$role ="bpki";	include "familyproc.php";?>	</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a href="?module=viewfamily&role=<?php echo "i" ?>"><?php 
+									$role ="i";	include "familyproc.php";?>	</a>
+					<ul>
+						<li>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "blni" ?>"><?php 
+									$role ="blni";	include "familyproc.php";?>	</a></li>
+							</ul>
+							<a href="?module=viewfamily&role=<?php echo "ni" ?>"><?php 
+									$role ="ni";	include "familyproc.php";?>	</a>
+							<ul>
+								<li><a href="?module=viewfamily&role=<?php echo "bpni" ?>"><?php 
+									$role ="bpni";	include "familyproc.php";?>	</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 				</ul>
 			</li>
 		</ul>
-	</div>
-</body>
+</div>

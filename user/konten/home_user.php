@@ -6,10 +6,7 @@
 
 <body>
 
-<h1 align="center"> HAI GAIS</h1><br />
-<img src="../Malik.JPG" width="300px" height="300px" float="left"/>
- 		
-
+<h1 align="center"> HAI <?php echo strtoupper($_SESSION['username']); echo " ! :)"; ?></h1><br />		
 	
 
 </body>

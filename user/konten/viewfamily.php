@@ -46,7 +46,7 @@
 -->
 </style>
 
-<form action="?module=cobaduluya#pos" method="post" class="style3">
+<form action="?module=familytree#pos" method="post" class="style3">
 	<button class="back">BACK</button>
 </form>
 <div align="center" class="style1">
@@ -55,14 +55,15 @@
 
 <?php 
     include "../koneksi/koneksi.php";
-    session_start();
+
     $role = $_GET['role'];
 	$id = $_SESSION['id'];
 	$query = "SELECT * FROM family WHERE (id ='$id') and (keluarga ='$role')";
 	$result = mysqli_query($conn,$query);
 	$buff = mysqli_fetch_array($result);
 
-	if(mysqli_num_rows($result)==1){?>
+	if(mysqli_num_rows($result)==1){
+	?>
 		<form action="?module=editfamilyproc#pos" method="post" enctype="multipart/form-data" class="style2">
 			<p>&nbsp;</p>
 				<b>
@@ -109,8 +110,8 @@
 				<b>
 
 			<table width="496" border="0" align="center">
-				<input type="hidden" name="id_user" value="<?php echo $id_user ?>">
-				<input type="hidden" name="family_role" value="<?php echo $role ?>">
+				<input type="hidden" name="id" value="<?php echo $id ?>">
+				<input type="hidden" name="keluarga" value="<?php echo $role ?>">
 				<tr>
 					<h2>Upload Foto</h2>
 					<td>Foto :</td>

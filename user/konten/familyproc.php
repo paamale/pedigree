@@ -4,5 +4,5 @@
 	$buff=mysqli_fetch_array(mysqli_query($conn, $select));
 ?>
 
-<img src="file/<?php echo $buff['foto']; ?>" width="100px" height="100px">
-<p style="color: white;"><?php echo $buff['nama']; ?></p>
+<img src="file/<?php echo $buff['photo']; ?>" width="100px" height="100px">
+<p><?php echo $buff['nama']; ?></p>

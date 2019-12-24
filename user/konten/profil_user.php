@@ -1,7 +1,5 @@
 <?php
-    session_start();
     include"../koneksi/koneksi.php";
-    //echo $_SESSION['username'];
     $username=$_SESSION['username'];
     $select="SELECT * FROM register WHERE username='$username'";
     $result=mysqli_query($conn,$select);
@@ -9,9 +7,7 @@
 ?>
         <h2 align="center">PROFIL</h2><br />
         <table align="center" width="487" border="0">
-            <input type="hidden" name="id" value="<php echo $buff['id]:?>"
-
-                \>
+            <input type="hidden" name="id" value="<?php echo $buff['id']; ?>" \>
             <tr>
                 <td width="150">Nama</td>
                 <td width="327">: <?php echo $buff['nama'];?></td>
