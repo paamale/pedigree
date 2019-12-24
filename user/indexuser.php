@@ -20,7 +20,7 @@
 			<ul id="navmenu">
 				<li><a href="?module=home_user#pos"><i class="fas fa-home"></i> Home</a></li>
 				<li><a href="?module=profil_user#pos"> <i class="fas fa-user"></i> Profil</a></li>
-				<li><a href="?module=tampilan_pedigree#pos"><i class="fas fa-plus-circle"></i> ADD </a></li>
+				<li><a href="?module=add_family#pos"><i class="fas fa-plus-circle"></i> ADD </a></li>
 				<li><a href="?module=cobaduluya#pos"><i class="fas fa-users"></i> Family Tree</a></li>
 				<li><a href="?module=logout_user#pos"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
 				
@@ -43,7 +43,6 @@
 		</div>
 
 		<div id="footer" >
-			<div position"absolute" > </div>
 			Ahmad Malik Fajar & Nida Putri Dzakiyyah<br/>
 			Teknik Informatika 2018<br/>
 			UIN Syarif Hidayatullah Jakarta<br/>
